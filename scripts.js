@@ -1,33 +1,23 @@
+var todos = [
+    {
+        text: 'Aprender Vue.js',
+        done: false
+    },
+    {
+        text: 'Aprender JavaScript',
+        done: true
+    }
+];
 
 const todosApp = {
     data() {
         return {
-            todos: [],
-            newTodo: {
-                done: false
-            }
+            todos: window.todos            
         }
-    },
-    methods: {
-        addTodo: function() {
-            if (this.newTodo.text) {
-                this.todos.push(this.newTodo);
-                this.newTodo = {
-                    done: false
-                };
-                localStorage.setItem("todos", JSON.stringify(this.todos));
-            } else {
-                alert("A descrição da tarefa é obrigatória");
-            }
-        }
-    },
-    created() {
-        this.todos = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : this.todos;
-    },
-    updated() {
-        localStorage.setItem("todos", JSON.stringify(this.todos));
     }
+};
 
-}
-
+// Linha que inicializa o app
+// e monta o componente no elemento com id "app"
+// VTTCue.Create(todosApp).mount('#app');
 Vue.createApp(todosApp).mount('#app');

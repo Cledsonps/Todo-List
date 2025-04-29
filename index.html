@@ -22,18 +22,18 @@
                 
                 <div class="all-todos">
                     <div 
-                        class="single-todo" 
-                        v-for="todo in todos"
-                        :class="{done : todo.done}"
-                        @click="todo.done = !todo.done">
+                        v-for="todo in todos" 
+                        class="single-todo"
+                        :class="{ done: todo.done }"
+                    >
                         <p>{{todo.text}}</p>
                     </div>
                 </div>
 
-                <button v-if="todos.length" class="clear" @click="todos=[]">Limpar tudo</button>
+                <button class="clear">Limpar tudo</button>
 
-                <input type="text" placeholder="Escreva uma nova tarefa..." v-model="newTodo.text">
-                <button class="add" @click="addTodo()">Adicionar</button>
+                <input type="text" placeholder="Escreva uma nova tarefa...">
+                <button class="add">Adicionar</button>
 
                 <div class="instructions">
                     Instruções:
@@ -46,7 +46,7 @@
             </section>
 
         </main>
-        <script src="https://unpkg.com/vue@next"></script>
+        <script src="https://unpkg.com/vue@3"></script>
         <script src="scripts.js"></script>
     </body>
 
